@@ -15,7 +15,7 @@ export class TodoItem extends Component {
     justifyContent:'space-around',
     alignItems:'center',       
     textDecoration:(!this.props.todos.complete)?'line-through' : 'none',
-//color:(!this.props.todos.complete)?'red' : 'blue',
+    color:(!this.props.todos.complete)?'red' : 'blue',
             
            }
       
