@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+//Climbing the tree component drilling
 export class TodoItem extends Component {
     getState=()=>{
         
