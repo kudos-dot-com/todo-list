@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/*Use strict*/
 
 import React,{ Component } from 'react';
 import TodosItem from './TodoItem';
