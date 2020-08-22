@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-//Climbing the tree component drilling
+
 export class TodoItem extends Component {
     getState=()=>{
         
-       
-        return{
-                 
-            background:'#333',
+    return{
+    height:'50px',             
+    background:'#333',
     margin:'5px',
     color:'#fff',
     textTransform:'capitalize',
-    display:'flex',
-    justifyContent:'space-around',
-    alignItems:'center',       
-    textDecoration:(!this.props.todos.complete)?'line-through' : 'none',
-    color:(!this.props.todos.complete)?'red' : 'blue',
+    position:'relative',
+    textDecoration:(this.props.todos.complete)?'line-through' : 'none',
             
            }
       
@@ -27,8 +23,13 @@ export class TodoItem extends Component {
         return (
            
             <div style={this.getState()}>
+                
+            <div style={{display:'flex',paddingLeft:'5px',alignItems:'center',alignContent:'center',position:'absolute',top:'50%',transform:'translateY(-50%)',justifyContent:'space-around'}}>
             <input type="checkbox" name="" id={id} onChange={this.props.markComplete.bind(this,id)}/> 
-            <p>{work}</p>    
+            <p style={{fontSize:'20px',paddingLeft:'5px'}}>{work}</p>
+            </div>
+           
+        <button style={{position:'absolute',right:'0px',top:'0px',display:'block',background:'red',color:'#fff',fontSize:'20px',width:'50px',height:'100%',borderRadius:'50%',textAlign:'center'}} onClick={this.props.checkComplete.bind(this,id)}>x</button>    
             </div>
         )
     }

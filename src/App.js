@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './component/Todos';
+import Header from './layout/header';
+import Addtodo from './component/addtodo';
 import './App.css';
 
 class App extends Component
@@ -38,12 +40,22 @@ markComplete=(id)=>{
  });
 
 }
-render() {
+checkComplete=(id)=>{
+  this.setState({todos:[...this.state.todos.filter(todos=>todos.id!==id)]});
+}
+render(){
   
   return (
-   
-      <Todos todo={this.state.todos} markComplete={this.markComplete}/>
+    <div className="App">
+       <Header/>
+     <div className="todo">
+     <Addtodo/>
+      <Todos todo={this.state.todos} markComplete={this.markComplete} checkComplete={this.checkComplete}/>
     
+     </div>
+      
+    </div> 
+   
     
   );
 }

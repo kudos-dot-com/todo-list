@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/*Use strict*/
 
 import React,{ Component } from 'react';
 import TodosItem from './TodoItem';
@@ -13,7 +12,7 @@ import PropTypes from 'prop-types';
 
        //console.log(this.props.todo);
     return this.props.todo.map((todos)=>
-    <TodosItem key={todos.id} todos={todos} markComplete={this.props.markComplete}/>);
+    <TodosItem key={todos.id} todos={todos} markComplete={this.props.markComplete} checkComplete={this.props.checkComplete}/>);
            
         
     }
